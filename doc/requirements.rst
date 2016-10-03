@@ -9,6 +9,14 @@ List of requirements
 .. item-list::
     :filter: req
 
+Version to implement requirement
+--------------------------------
+
+.. item-matrix::
+    :source: req
+    :target: exemplum
+    :type: implemented_by
+
 Testcases for requirements
 --------------------------
 

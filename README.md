@@ -22,5 +22,5 @@ To build the example you need to have a working sphinx installation and the [sph
 ## known issues / missing features
 There are several issues that I was not able to solve quickly:
 
-* customize the format of the item-matrix tables: I want the table to have a better heading than "source" and "target". It would be nice if there was something like traceability_matrix_template similar to traceability_item_template. With this feature we could have tables labeled "requirement", "tested by" to make more sense to the reader.
+* customize the format of the item-matrix tables: I want the table to have a better heading than "source" and "target". It would be nice if there was something like traceability_matrix_template similar to traceability_item_template. With this feature we could have tables labeled "requirement", "tested by" to make more sense to the reader. This feature is planned in a future version of original extensions.
 * permit items without an explicit identifier when inside a docstring. Reasoning: when documenting test cases or implementation you constantly have to come up with an identifier when the method name could be used automatically instead.

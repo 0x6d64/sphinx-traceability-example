@@ -4,12 +4,13 @@ Welcome to the exemplum documentation!
 Contents:
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     intro
     requirements
     modules
     unittests
+    versions
 
 Indices and tables
 ==================
