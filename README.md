@@ -1,6 +1,8 @@
 # sphinx-traceability-example
 example implementation of requirements and test cases using 
-[sphinx-traceability-extension](https://github.com/ociu/sphinx-traceability-extension)
+[the melexis for of the sphinx-traceability-extension](https://github.com/melexis/sphinx-traceability-extension).
+For an older version of this example (using [](https://github.com/ociu/sphinx-traceability-extension) see 
+[this release](https://github.com/0x6d64/sphinx-traceability-example/releases/tag/v1.0)).
 
 ## motivation
 The sphinx traceability extension contains the required building blockst to document requirements 
