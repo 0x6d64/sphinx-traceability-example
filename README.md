@@ -1,7 +1,8 @@
 # sphinx-traceability-example
 example implementation of requirements and test cases using 
 [the melexis for of the sphinx-traceability-extension](https://github.com/melexis/sphinx-traceability-extension).
-For an older version of this example (using [](https://github.com/ociu/sphinx-traceability-extension) see 
+For an older version of this example (using 
+[the original extension](https://github.com/ociu/sphinx-traceability-extension) see 
 [this release](https://github.com/0x6d64/sphinx-traceability-example/releases/tag/v1.0)).
 
 ## motivation
@@ -9,6 +10,9 @@ The sphinx traceability extension contains the required building blockst to docu
 and associate test cases with them. The example included in the project showcases how these blocks 
 work, but I needed an example that showed how documentation of a real project with formal 
 requirements, implementation if those requirements and tests work.
+
+## requirements
+This example was tested using version 3.4.1 of the mlx.traceability package. This means that we also need python3.
 
 ## the example project
 This project contains the fictional `exemplum` package. The package is tested in `exemplum_test` 
