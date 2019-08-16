@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""tests for exemplum module"""
 
 from unittest import TestCase
 from exemplum import Exemplum
 
 class TestExemplum(TestCase):
+    """test cases for class Exemplum"""
     def test_add_data(self):
         """
         .. testcase:: tc_1
@@ -15,9 +17,7 @@ class TestExemplum(TestCase):
         """
         test_inst = Exemplum()
         test_inst.add_data('some data')
-        self.assertIn('some data', test_inst._data)
-        pass
-
+        self.assertIn('some data', test_inst._data)  # pylint: disable=protected-access
 
     def test_len_method(self):
         """
@@ -44,7 +44,7 @@ class TestExemplum(TestCase):
         test_inst = Exemplum()
 
         test_inst.add_data('some data')
-        self.assertIn('some data', test_inst._data)
+        self.assertIn('some data', test_inst._data)  # pylint: disable=protected-access
 
         test_inst.clear()
         self.assertEqual(0, len(test_inst))
@@ -56,4 +56,3 @@ class TestExemplum(TestCase):
 
         This test does nothing.
         """
-        pass

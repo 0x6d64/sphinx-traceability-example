@@ -37,7 +37,7 @@ Requirement details
 
     The data storage from :item:`req_1` shall be initialized with an empty list.
 
-.. requirement:: req_3 Sample caption of requirement req_3
+.. requirement:: req_3
 
     The :py:class:`~exemplum.exemplum.Exemplum` class shall provide a method :py:meth:`~exemplumexemplum.Exemplum.add_data` to fill the data storage.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-implements a minimal example of an implemenation of some software
+implements a minimal example of an implementation of some software
 """
 
 class Exemplum(object):
