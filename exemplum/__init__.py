@@ -1,1 +1,1 @@
-from exemplum import Exemplum
+from .exemplum import Exemplum

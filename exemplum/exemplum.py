@@ -17,7 +17,7 @@ class Exemplum(object):
         """
         self._data.append(data)
 
-    def empty(self):
+    def clear(self):
         """
         empties the internal data storage
         :return: None
