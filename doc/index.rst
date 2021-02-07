@@ -1,10 +1,9 @@
 Welcome to the exemplum documentation!
 ======================================
 
-Contents:
-
 .. toctree::
     :maxdepth: 2
+    :caption: Contents:
 
     intro
     requirements

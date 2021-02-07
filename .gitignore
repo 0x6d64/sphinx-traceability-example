@@ -9,6 +9,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# PyCharm files
+.idea/
+
 # C extensions
 *.so
 
@@ -67,7 +70,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+doc/_build/
 
 # PyBuilder
 target/

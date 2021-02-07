@@ -16,7 +16,8 @@ Testcase details
 ----------------
 
 .. note::
-    This module documentation was generated using automodule. See the docstrings in the implementation for the source code of this document.
+    This module documentation was generated using automodule.
+    See the docstrings in the implementation for the source code of this document.
 
 .. automodule:: exemplum_test.test_exemplum
     :members:
