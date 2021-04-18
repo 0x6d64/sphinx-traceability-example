@@ -13,6 +13,7 @@ on:
     branches:
       - master
       - feature/**
+  workflow_dispatch:    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -30,8 +31,38 @@ jobs:
       uses: ammaraskar/sphinx-action@0.4
       with:
         # The folder containing your sphinx docs.
-        docs-folder: doc/ # default is docs/
+        docs-folder: docs/ # default is docs/
         # The command used to build your documentation.
         build-command: make html # optional, default is make html
         # Run before the build command, you can use this to install system level dependencies, for example with "apt-get update -y && apt-get install -y perl"
         pre-build-command: "pip install sphinx-rtd-theme mlx.traceability"
+
+    - name: Upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: DocumentationHTML
+        path: docs/_build/html/
+
+    - name: Commit documentation changes
+      run: |
+        git clone https://github.com/0x6d64/sphinx-traceability-example.git --branch gh-pages --single-branch gh-pages
+        cp -r docs/_build/html/* gh-pages/
+        cd gh-pages
+        touch .nojekyll
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Update documentation" -a || true
+        # The above command will fail if no changes were present, so we ignore
+        # that.
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+        directory: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    # ===============================
+        
+        
+      
+        
