@@ -7,6 +7,9 @@ For an older version of this example (using
 
 The built documentation can be viewed here: https://0x6d64.github.io/sphinx-traceability-example/
 
+[![CI](https://github.com/0x6d64/sphinx-traceability-example/actions/workflows/main.yml/badge.svg)
+](https://github.com/0x6d64/sphinx-traceability-example/actions/workflows/main.yml)
+
 ## motivation
 The sphinx traceability extension contains the required building blockst to document requirements 
 and associate test cases with them. The example included in the project showcases how these blocks 
