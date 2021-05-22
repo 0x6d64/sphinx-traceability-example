@@ -8,7 +8,6 @@ List of testcases and tested requirements
 
 .. item-matrix:: tcs to requirements
     :source: tc
-    :target:
     :type: tests
 
 

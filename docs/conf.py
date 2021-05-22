@@ -14,8 +14,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 
+sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
@@ -27,7 +27,6 @@ author = u'Martin Demling'
 version = u''
 # The full version, including alpha/beta/rc tags
 release = u'2.0'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -41,8 +40,9 @@ needs_sphinx = '2.0'
 extensions = [
     'mlx.traceability',
     'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
+    #    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
+    'sphinx.ext.graphviz',
     'sphinx.ext.coverage',
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
@@ -76,13 +76,12 @@ exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'furo'
+html_theme = 'sphinxdoc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -110,7 +109,6 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'sphinx-traceability-exampledoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -140,7 +138,6 @@ latex_documents = [
      u'Martin Demling', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -149,7 +146,6 @@ man_pages = [
     (master_doc, 'sphinx-traceability-example', u'sphinx-traceability-example Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -161,7 +157,6 @@ texinfo_documents = [
      author, 'sphinx-traceability-example', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -179,7 +174,6 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
 
 # -- Extension configuration -------------------------------------------------
 
@@ -206,38 +200,30 @@ traceability_relationships = {
     'tests': 'tested_by'
 }
 
-traceability_item_template = """
-    {% if type == 'requirement' %}
-    **requirement** {{ id }}
-    '''''''''''''''''''''''''''''''''''''''' {# make every requirement a paragraph #}
-    {% if caption != "" %} {# skip this if no caption is given #}
+traceability_relationship_to_string = {
+    'fulfills': 'Fulfills',
+    'fulfilled_by': 'Fulfilled by',
+    'depends_on': 'Depends on',
+    'impacts_on': 'Impacts on',
+    'implements': 'Implements',
+    'implemented_by': 'Implemented by',
+    'realizes': 'Realizes',
+    'realized_by': 'Realized by',
+    'validates': 'Validates',
+    'validated_by': 'Validated by',
+    'trace': 'Traces',
+    'backtrace': 'Backtrace',
+    'tests': 'Tests',
+    'tested_by': 'Tested by',
+}
 
-    {{ caption }}:
-    {% endif %}
-
-    .. item-matrix:: testcases that test {{ id }}
-        :source: {{ id }}
-        :target: tc
-        :type: tested_by
-
-    {{ content|indent(4) }}
-    {% elif type == 'testcase' %}
-    **testcase** {{ id }} {{ caption }}:
-
-    .. item-matrix:: requirements that this testcase {{ id }} tests
-        :source: {{ id }}
-        :target: req
-        :type: tests
-
-    {{ content|indent(4) }}
-    {% else %}
-    {{ id }}
-    {%- if caption %}
-        **{{ caption }}**
-    {% endif %}
-        {{ content|indent(4) }}
-    {% endif %}
-    """
+traceability_render_relationship_per_item = True
+traceability_item_no_captions = False
+traceability_list_no_captions = False
+traceability_matrix_no_captions = False
+traceability_tree_no_captions = False
+traceability_render_attributes_per_item = True
+traceability_collapse_links = True
 
 
 def setup(app):

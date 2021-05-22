@@ -39,7 +39,7 @@ class TestExemplum(TestCase):
         .. testcase:: tc_3
             :tests: req_2 req_4 req_3
 
-        This testcase tests several requirements at once using a typical use case.
+            This testcase tests several requirements at once using a typical use case.
         """
         test_inst = Exemplum()
 
@@ -54,5 +54,5 @@ class TestExemplum(TestCase):
         .. testcase:: tc_4
             :tests:
 
-        This test does nothing.
+            This test does nothing.
         """
