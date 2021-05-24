@@ -9,7 +9,7 @@ List of versions
 .. item:: exemplum-v0.0
     :implements: req_1 req_2
 
-    Inital protype.
+    Initial prototype.
     Features:
 
     * data storage

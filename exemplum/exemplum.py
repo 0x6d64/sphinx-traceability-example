@@ -4,6 +4,7 @@
 implements a minimal example of an implementation of some software
 """
 
+
 class Exemplum(object):
     def __init__(self):
         """

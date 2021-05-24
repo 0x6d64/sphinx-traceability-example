@@ -5,14 +5,16 @@
 from unittest import TestCase
 from exemplum import Exemplum
 
+
 class TestExemplum(TestCase):
     """test cases for class Exemplum"""
+
     def test_add_data(self):
         """
         .. testcase:: tc_1
             :tests: req_3
 
-            initalize an :py:class:`Exemplum` object and add an element.
+            initialize an :py:class:`Exemplum` object and add an element.
             Inspect the data storage if added data is there.
         """
         test_inst = Exemplum()
@@ -34,7 +36,7 @@ class TestExemplum(TestCase):
             test_inst.add_data(idx * idx)
             self.assertEqual(idx, len(test_inst))
 
-    def test_usecase(self):
+    def test_use_case(self):
         """
         .. testcase:: tc_3
             :tests: req_2 req_4 req_3

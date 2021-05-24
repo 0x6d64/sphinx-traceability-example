@@ -1,7 +1,7 @@
 Introduction
 ============
 
-The only purpose of the exemplum package is to demonstrate the funtionality of
+The only purpose of the exemplum package is to demonstrate the functionality of
 the `melexis fork`_ of the `sphinx-traceability-extension`_.
 
 In this example we pretend to implement a simple piece of software. Its
