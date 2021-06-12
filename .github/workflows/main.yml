@@ -8,11 +8,11 @@ on:
   push:
     branches:
       - master
-      - feature/**
+#      - feature/**
   pull_request:
     branches:
-      - master
-      - feature/**
+#      - master
+#      - feature/**
   workflow_dispatch:    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
