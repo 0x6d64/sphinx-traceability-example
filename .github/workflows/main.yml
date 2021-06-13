@@ -8,11 +8,11 @@ on:
   push:
     branches:
       - master
-      - feature/**
+#      - feature/**
   pull_request:
     branches:
-      - master
-      - feature/**
+#      - master
+#      - feature/**
   workflow_dispatch:    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -44,6 +44,7 @@ jobs:
         path: docs/_build/html/
 
     - name: Commit documentation changes
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master'}}
       run: |
         git clone https://github.com/0x6d64/sphinx-traceability-example.git --branch gh-pages --single-branch gh-pages
         cp -r docs/_build/html/* gh-pages/
@@ -55,7 +56,9 @@ jobs:
         git commit -m "Update documentation" -a || true
         # The above command will fail if no changes were present, so we ignore
         # that.
+
     - name: Push changes
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master'}}
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
