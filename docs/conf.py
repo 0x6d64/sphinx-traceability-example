@@ -14,8 +14,11 @@
 #
 import os
 import sys
+from pathlib import Path
 
 sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('.'))
+from traceability_dot_export import export_as_dotfile
 
 # -- Project information -----------------------------------------------------
 
@@ -225,6 +228,11 @@ traceability_tree_no_captions = False
 traceability_render_attributes_per_item = True
 traceability_collapse_links = True
 
+traceability_temp_dir = os.path.join(Path().absolute(), "_build", "_temp")
+if not os.path.exists(traceability_temp_dir):
+    os.makedirs(traceability_temp_dir)
+traceability_json_export_path = os.path.join(traceability_temp_dir, "traceability.json")
+traceability_dot_export_path = os.path.join(traceability_temp_dir, "traceability.dot")
 
 def setup(app):
     from mlx.traceability import ItemDirective
@@ -233,3 +241,6 @@ def setup(app):
     # these types
     app.add_directive('requirement', ItemDirective)
     app.add_directive('testcase', ItemDirective)
+
+    app.add_config_value('traceability_dot_export_path', None, 'env')
+    app.connect('env-check-consistency', export_as_dotfile, priority=510)
