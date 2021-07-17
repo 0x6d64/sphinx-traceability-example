@@ -1,6 +1,7 @@
 # sphinx-traceability-example
 example implementation of requirements and test cases using 
 [the melexis for of the sphinx-traceability-extension](https://github.com/melexis/sphinx-traceability-extension).
+
 For an older version of this example (using 
 [the original extension](https://github.com/ociu/sphinx-traceability-extension) see 
 [this release](https://github.com/0x6d64/sphinx-traceability-example/releases/tag/v1.0)).
@@ -17,7 +18,8 @@ work, but I needed an example that showed how documentation of a real project wi
 requirements, implementation if those requirements and tests work.
 
 ## requirements
-This example was tested using version 3.4.1 of the mlx.traceability package. This means that we also need python3.
+This example was tested using version 3.4.1 of the mlx.traceability package. 
+This means that we also need python3.
 
 ## the example project
 This project contains the fictional `exemplum` package. The package is tested in `exemplum_test` 
@@ -39,20 +41,9 @@ source to only get the linked items for that requirement or testcase. We also ch
 is given to insert a prettier caption for requirements.
 
 
-## prerequisites
-To build the example you need to have a working sphinx installation and the 
-[sphinx-traceability-extension](https://github.com/ociu/sphinx-traceability-extension) has to be 
-installed. You may also need to adapt the `'sphinxcontrib.traceability'` value in `doc/config.py` 
-to adapt to match the location where the extension is installed on your system. 
-
 ## known issues / missing features
 There are several issues that I was not able to solve quickly:
 
-* customize the format of the item-matrix tables: I want the table to have a better heading than 
-"source" and "target". It would be nice if there was something like traceability_matrix_template 
-similar to traceability_item_template. With this feature we could have tables labeled "requirement",
-"tested by" to make more sense to the reader. This feature is planned in a future version of 
-original extensions.
 * permit items without an explicit identifier when inside a docstring. Reasoning: when documenting 
 test cases or implementation you constantly have to come up with an identifier when the method name
 could be used automatically instead.
