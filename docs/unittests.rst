@@ -9,6 +9,8 @@ List of testcases and tested requirements
 .. item-matrix:: tcs to requirements
     :source: tc
     :type: tests
+    :targettitle: requirement
+    :sourcetitle: test case
 
 
 Testcase details
