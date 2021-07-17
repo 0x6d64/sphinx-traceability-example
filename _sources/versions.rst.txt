@@ -2,6 +2,8 @@
 
 Version history
 ===============
+This chapter shows how to create items for certain tool versions, and then
+assign implemented requirements to them.
 
 List of versions
 ----------------
@@ -26,8 +28,10 @@ List of versions
 requirements implemented per version
 ------------------------------------
 
-.. item-matrix::
+.. item-matrix:: versions, requirements
     :source: exemplum
     :target: req
     :type: implements
+    :sourcetitle: version
+    :targettitle: requirement
 
